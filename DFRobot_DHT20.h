@@ -55,6 +55,8 @@ public:
 
 private:
 
+    int   startMeasuring();
+
   /**
    * @brief Write command into sensor chip 
    * @param pBuf  Data included in command
@@ -71,7 +73,8 @@ private:
     
     TwoWire *_pWire;
     uint8_t _address;
-  
+    uint32_t _lastRead;
+    float  _lastTemperature, _lastHumidity;
 };
 
 #endif
